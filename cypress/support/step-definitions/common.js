@@ -54,15 +54,14 @@ Given(/^I login with correct credentials$/, () => {
     }); 
 });
 
-
 Then(/^I select the hotel in '(.*)' and dates$/, (city) => {
     const checkInDate = Cypress.dayjs().add(7, 'days').format('YYYY-MM-DD'); 
     const checkOutDate = Cypress.dayjs().add(10, 'days').format('YYYY-MM-DD');
     cy.visit(Cypress.config('baseUrl'));
     cy.get('[aria-modal="true"]', {delay: 300}).should(Cypress._.noop).then($el => {
-      if ($el.length) {
-        cy.wrap(ps.common.login.modalWin).should('be.visible').click();
-      }
+        if ($el.length) {
+          cy.wrap(ps.common.login.modalWin).should('be.visible').click();
+        }
     });
     cy.get(ps.common.search.cityInput).type(city, {force: true}).should('have.value', city);
     cy.get(ps.common.search.startdate).click();
@@ -70,14 +69,16 @@ Then(/^I select the hotel in '(.*)' and dates$/, (city) => {
     cy.get(`[data-date="${checkOutDate}"]`).click();
     cy.get(ps.common.search.searchBttn).contains('Search').click();
     cy.get(ps.common.search.searchResultCity).contains(city);
-    cy.get(ps.common.search.hotelLink).invoke('removeAttr', 'target').click();
-    cy.get(ps.common.login.acceptCookies).click();
-    cy.get(ps.common.search.reserveBttn).scrollIntoView().should('be.visible');
-    cy.get('body').then($body => {
-            if ($body.find(ps.common.search.selectChalet).length) {
-                cy.get(ps.common.search.selectChalet).select('1').should('have.value', '1');
-            }
+    cy.get(ps.common.search.hotelLink).invoke('attr', 'href').as('hotelPage');
+    cy.get('@hotelPage').then(newTabUrl => {
+        cy.visit(newTabUrl);
+        cy.get(ps.common.search.reserveBttn).scrollIntoView().should('be.visible');
+        cy.get('body').then($body => {
+                if ($body.find(ps.common.search.selectChalet).length) {
+                    cy.get(ps.common.search.selectChalet).select('1').should('have.value', '1');
+                }
+        });
+        cy.get(ps.common.search.reserveBttn).click({force:true});
+        cy.get(ps.common.search.reservationStep2).invoke('text').should('include', 'Enter your details');
     });
-    cy.get(ps.common.search.reserveBttn).click();
-    cy.get(ps.common.search.reservationStep2).invoke('text').contains('Enter your details');
 });

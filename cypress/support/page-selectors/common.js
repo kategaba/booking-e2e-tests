@@ -16,10 +16,10 @@ export default {
         startdate: '[data-testid="date-display-field-start"]',
         searchBttn: 'button[type="submit"]',
         searchResultCity: 'h1[aria-live="assertive"]',
-        hotelLink: '[data-testid="title"]:eq(0)',
+        hotelLink: '[data-testid="title-link"]:eq(0)',
         selectChalet: '.hprt-block [data-testid="select-room-trigger"]:eq(0)',
-        reserveBttn: '[data-title="Select your accommodation first"]',
+        reserveBttn: '.hprt-reservation-cta button:eq(0)',
         changeselection: '[data-ga4-track="change_selection"]',
-        reservationStep2: '.bui-card__content header h2:eq(0)',
+        reservationStep2: '.bui-card__content header h2:eq(4)',
     }
 }

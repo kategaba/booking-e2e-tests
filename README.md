@@ -34,7 +34,7 @@ Before you can run tests, you must ensure you have the following in your `cypres
 
 ### How to execute tests locally
 
-1. Clone the project (e.g. via CLI `git clone https://github.com/kategaba/booking_e2e_tests`). NOTE: to be able to use git commands git should be installed on your computer (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Also, you should have a github account with access to the repo you're trying to clone. After running `git clone <repo link>` you'll be asked to provide your github username and password.
+1. Clone the project (e.g. via CLI `git clone https://github.com/kategaba/booking-e2e-tests`). NOTE: to be able to use git commands git should be installed on your computer (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Also, you should have a github account with access to the repo you're trying to clone. After running `git clone <repo link>` you'll be asked to provide your github username and password.
 2. Install node.js and npm (https://nodejs.org/en/) on your computer. If it's already installed, make sure that their version is up to date.
 3. Go to the main folder of the project. You'll need to be in that folder when running scripts below.
 4. Run `npm install` - it will install required npm dependencies.

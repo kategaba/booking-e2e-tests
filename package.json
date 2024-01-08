@@ -1,0 +1,28 @@
+{
+  "name": "booking_e2e_tests",
+  "version": "1.0.0",
+  "description": "Booking e2e tests",
+  "author": "Kate G.",
+  "main": "",
+  "scripts": {
+    "test:e2e:debug": "cypress open --config-file cypress.config.js",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --max-warnings=0 --fix",
+    "prettier": "prettier --write cypress/**/*.js"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.1",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cypress": "^12.16.0",
+    "dayjs": "^1.11.10",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step-definitions/**/*.js",
+    "filterSpecs": true,
+    "omitFiltered": true
+  }
+}

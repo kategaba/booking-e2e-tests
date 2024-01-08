@@ -1,0 +1,7 @@
+[
+    { "email": "kateyurasava+test@gmail.com", "password": "testUser2023!" },
+    { "email": "kateyurasava+test1@gmail.com", "password": "Testuser2023!" },
+    { "email": "kateyurasava+test2@gmail.com", "password": "tEstUser2023!" },
+    { "email": "kateyurasava+test@gmail.com", "password": "asd@#$%%^&*()<>"},
+    { "email": "invalid.com", "password": "ttttUser2023!"}
+]

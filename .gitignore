@@ -1,0 +1,22 @@
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test/unit/coverage
+.npmrc
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode
+
+.env
+cypress.env.json
+
+test/e2e/videos/
+test/e2e/screenshots/
+test/e2e/downloads/
